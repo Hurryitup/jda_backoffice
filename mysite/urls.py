@@ -19,8 +19,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^backoffice/', include('mysite.backoffice.urls')),
+    url(r'^backoffice/', include('backoffice.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^nested_admin/', include('nested_admin.urls')),
-    url(r'^api/', include('mysite.api.urls')),
+    url(r'^api/', include('api.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
