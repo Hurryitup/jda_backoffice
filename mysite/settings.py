@@ -115,13 +115,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'EST'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = False
+USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
@@ -131,7 +131,11 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-#GoogleMapsAPI
+# GoogleMapsAPI
 
 from location_field import settings
 settings.LOCATION_FIELD['provider.google.api_key'] = 'AIzaSyCp0GNF8euqXxdbPgziuz_Up74ydS8cdS0'
+
+# color picker browser compatibility
+
+GRAPPELLI_CLEAN_INPUT_TYPES = False

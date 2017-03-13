@@ -26,8 +26,8 @@ class Coupon(models.Model):
 class Event(models.Model):
     name = models.CharField(max_length=25)
     description = models.CharField(max_length = 255)
-    start = models.DateTimeField()
-    end = models.DateTimeField()
+    start = models.TimeField()
+    end = models.TimeField()
     class Meta :
         abstract = True
     def __str__(self):
