@@ -98,3 +98,8 @@ class SubEvent(SingleEvent):
         related_name='sub_events',
         on_delete = models.CASCADE,
     )
+    visiting_day = models.ForeignKey(
+        VisitingDay,
+        related_name='sub_events',
+        on_delete = models.CASCADE
+    )

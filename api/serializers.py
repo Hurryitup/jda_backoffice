@@ -14,14 +14,14 @@ class SubEventSerializer(serializers.HyperlinkedModelSerializer):
         model = SubEvent
         fields = ('pk', 'name', 'description', 'start', 'end', 'coordinator',
                   'audience', 'balloon_color', 'address', 'location',
-                  # )
                   'composite_event')
 
 class SubEventNestedSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = SubEvent
         fields = ('pk', 'name', 'description', 'start', 'end', 'coordinator',
-                  'audience', 'balloon_color', 'address', 'location')
+                  'audience', 'balloon_color', 'address', 'location', 
+                  'visiting_day')
 
 class CompositeEventSerializer(serializers.HyperlinkedModelSerializer):
     sub_events = SubEventNestedSerializer(many=True, read_only=True)
