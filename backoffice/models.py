@@ -11,20 +11,20 @@ from django.db import models
 
 
 class VisitingDay(models.Model):
-    name = models.CharField(max_length=25)
+    name = models.CharField(max_length=255)
     date = models.DateTimeField('date of event')
     def __str__(self):
         return self.name
 
 class Coupon(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=255)
     description = models.CharField(max_length=255)
     image = models.ImageField(upload_to='coupon_images/')
     def __str__(self):
         return self.name
 
 class Event(models.Model):
-    name = models.CharField(max_length=25)
+    name = models.CharField(max_length=255)
     description = models.CharField(max_length = 255)
     start = models.TimeField()
     end = models.TimeField()
