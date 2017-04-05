@@ -20,7 +20,6 @@ class CompositeEventInline(nested_admin.NestedStackedInline):
     inlines = [SubEventInline]
     extra = 1
 
-
 class VisitingDayAdmin(nested_admin.NestedModelAdmin):
     inlines = [StandaloneEventInline, CompositeEventInline]
 
