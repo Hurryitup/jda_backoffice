@@ -11,21 +11,21 @@ from django.db import models
 
 
 class VisitingDay(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=1000)
     date = models.DateTimeField('date of event')
     def __str__(self):
         return self.name
 
 class Coupon(models.Model):
-    name = models.CharField(max_length=255)
-    description = models.CharField(max_length=255)
+    name = models.CharField(max_length=1000)
+    description = models.CharField(max_length=1000)
     image = models.ImageField(upload_to='coupon_images/')
     def __str__(self):
         return self.name
 
 class Event(models.Model):
-    name = models.CharField(max_length=255)
-    description = models.CharField(max_length = 255)
+    name = models.CharField(max_length=1000)
+    description = models.CharField(max_length = 1000)
     start = models.TimeField()
     end = models.TimeField()
     class Meta :
@@ -34,7 +34,7 @@ class Event(models.Model):
         return self.name
 
 class SingleEvent(Event):
-    coordinator = models.CharField(max_length = 31)
+    coordinator = models.CharField(max_length = 1000)
     STUDENT = 'S'
     PARENT = 'P'
     AUDIENCE_TYPE = (
@@ -66,7 +66,7 @@ class SingleEvent(Event):
         choices = COLORS
         """
     balloon_color = RGBColorField(blank=True, null=True)
-    address = models.CharField(max_length=255)
+    address = models.CharField(max_length=1000)
     location = PlainLocationField(based_fields=['address'], zoom=7)
     """
     visiting_day = models.ForeignKey(
