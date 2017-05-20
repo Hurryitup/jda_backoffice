@@ -3,8 +3,7 @@
 * run `pip install -r requirements.txt`
 
 # Usage 
-* Start the python virtual environment
-** 'source bin/activate'
+* Start the python virtual environment with 'source bin/activate'
 * Run `python manage.py runserver`
 * View the admin site from localhost:8000/admin/
 * To create a superuser run `python manage.py createsuperuser` and answer the prompts
